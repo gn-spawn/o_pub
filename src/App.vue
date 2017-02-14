@@ -3,7 +3,7 @@
 		<img src="./assets/o.png">
 		<h1>と思ったことを今すぐ共有</h1>
 		<input v-model.trim="newUrlText" @keyup.enter="addUrl" placeholder="オッと思ったことのURL" id="url" name="url">
-		<itemList></itemList>
+		<itemList v-bind:items="items"></itemList>
 	</div>
 </template>
 
