@@ -14,11 +14,7 @@ export default {
   components: {
     Item,
   },
-  data() {
-    return {
-      msg: 'Welcome to Your Vue.js App',
-    };
-  },
+  props: ['items'],
 };
 </script>
 

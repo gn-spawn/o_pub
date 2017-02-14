@@ -8,31 +8,28 @@
 </template>
 
 <script>
+import firebase from 'firebase';
 import ItemList from './components/ItemList';
-import ItemRef from './store/index';
-// import ItemRef from './store';
 
-/*
 const config = {
   databaseURL: 'https://ticketz-c299b.firebaseio.com',
 };
+/* global Vue, firebase */
 const db = firebase.initializeApp(config).database();
-var ItemRef = db.ref('todos');
-*/
+const ItemRef = db.ref('todos');
 
 export default {
   name: 'app',
   components: {
     ItemList,
   },
-  firebase() {
-    return {
-      items: ItemRef.limitToLast(25),
-    };
+  firebase: {
+    items: ItemRef,
   },
   data() {
     return {
       newUrlText: '',
+      items: firebase.items,
     };
   },
   methods: {
