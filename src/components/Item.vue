@@ -13,6 +13,8 @@ export default {
       point: 0,
     };
   },
+  methods: {
+  },
   props: ['item'],
 };
 </script>
