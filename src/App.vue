@@ -12,7 +12,7 @@ import firebase from 'firebase';
 import ItemList from './components/ItemList';
 
 const config = {
-  databaseURL: 'https://ticketz-c299b.firebaseio.com',
+  databaseURL: 'https://o-pub-8cbcf.firebaseio.com/',
 };
 /* global Vue, firebase */
 const db = firebase.initializeApp(config).database();
