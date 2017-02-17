@@ -1,7 +1,7 @@
 <template>
   <div class="itemList">
     <ul>
-			<item v-for="item in items" :item="item"></item>
+			<item v-for="item in items" :item="item" :reference="items"></item>
 		</ul>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
     <div id="item">
-		<a v-bind:href="item.text">{{item.text}}</a>
-		<button type="" @click="point++" class="button">{{point}} オッ</button>
+		<a v-bind:href="item.text" v-bind:item.point="point">{{item.text}}</a>
+		<button type="" @click="addPoint(item)" class="button">{{item.point}} オッ</button>
 	</div>
 </template>
 
@@ -10,12 +10,14 @@ export default {
   name: 'item',
   data() {
     return {
-      point: 0,
     };
   },
   methods: {
+    addPoint(item) {
+      this.pointRef.child(item['.key']).child('point').set(100000);
+    },
   },
-  props: ['item'],
+  props: ['item', 'reference'],
 };
 </script>
 

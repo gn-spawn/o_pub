@@ -18,24 +18,32 @@ const config = {
 const db = firebase.initializeApp(config).database();
 const ItemRef = db.ref('todos');
 
+console.log(this.$firebaseRefs);
+
 export default {
   name: 'app',
   components: {
     ItemList,
   },
   firebase: {
-    items: ItemRef,
+    // Itemコンポーネントでメソッドを使いたい
+    items: {
+      source: ItemRef,
+      asObject: true,
+    },
   },
-  data: {
-    newUrlText: '',
-    items: firebase.items,
+  data() {
+    return {
+      newUrlText: '',
+      items: firebase.items,
+    };
   },
   methods: {
     addUrl() {
-      console.log(this.newUrlText);
       if (this.newUrlText) {
         ItemRef.push({
           text: this.newUrlText,
+          point: 0,
         });
         this.newUrlText = '';
       }
