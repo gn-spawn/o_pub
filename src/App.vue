@@ -3,7 +3,7 @@
 		<img src="./assets/o.png">
 		<h1>と思ったことを今すぐ共有</h1>
 		<input v-model="newUrlText" v-on:keyup.enter="addUrl" placeholder="オッと思ったことのURL" id="url" name="url">
-		<itemList v-bind:items="items" :db="db"></itemList>
+		<itemList v-bind:items="items" v-bind:database="database"></itemList>
 	</div>
 </template>
 
@@ -31,6 +31,7 @@ export default {
     return {
       newUrlText: '',
       items: firebase.items,
+      database: db,
     };
   },
   methods: {

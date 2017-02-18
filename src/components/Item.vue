@@ -10,13 +10,16 @@ export default {
   name: 'item',
   data() {
     return {
+      point: this.item.point,
     };
   },
   methods: {
-/*    addPoint(item) {
-    }, */
+    addPoint(item) {
+      this.point += 1;
+      this.database.ref('todos').child(item['.key']).child('point').set(this.point);
+    },
   },
-  props: ['item', 'db'],
+  props: ['item', 'database'],
 };
 </script>
 

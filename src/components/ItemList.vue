@@ -1,7 +1,7 @@
 <template>
   <div class="itemList">
     <ul>
-			<item v-for="item in items" :item="item" :db="db"></item>
+			<item v-for="item in items" :item="item" :database="database"></item>
 		</ul>
   </div>
 </template>
@@ -14,7 +14,7 @@ export default {
   components: {
     Item,
   },
-  props: ['items', 'db'],
+  props: ['items', 'database'],
 };
 </script>
 
