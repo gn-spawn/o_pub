@@ -13,11 +13,10 @@ export default {
     };
   },
   methods: {
-    addPoint(item) {
-      this.pointRef.child(item['.key']).child('point').set(100000);
-    },
+/*    addPoint(item) {
+    }, */
   },
-  props: ['item', 'reference'],
+  props: ['item', 'db'],
 };
 </script>
 
