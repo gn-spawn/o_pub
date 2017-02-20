@@ -11,6 +11,11 @@ import Item from './Item';
 
 export default {
   name: 'itemList',
+  deta() {
+    return {
+      items: this.items.reverse(),
+    };
+  },
   components: {
     Item,
   },

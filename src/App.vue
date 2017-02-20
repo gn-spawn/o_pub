@@ -4,7 +4,7 @@
 		<img src="./assets/o.png">
 		<h1>と思ったことを今すぐ共有</h1>
 		<input v-model="newUrlText" v-on:keyup.enter="addUrl" placeholder="オッと思ったことのURL" id="url" name="url">
-		<itemList v-bind:items="items" v-bind:database="database"></itemList>
+		<itemList v-bind:items="reverseItems" v-bind:database="database"></itemList>
 	</div>
 </template>
 
@@ -28,6 +28,11 @@ export default {
   firebase: {
     // Itemコンポーネントでメソッドを使いたい
     items: ItemRef,
+  },
+  computed: {
+    reverseItems() {
+      return this.items.reverse();
+    },
   },
   data() {
     return {
@@ -89,6 +94,5 @@ export default {
 		margin: 0 0 20px;
 		width: 300px;
 	}
-	
 
 </style>
