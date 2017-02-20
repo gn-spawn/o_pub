@@ -17,7 +17,8 @@ const config = {
 };
 /* global Vue, firebase */
 const db = firebase.initializeApp(config).database();
-const ItemRef = db.ref('todos');
+const ItemRef = db.ref('todos').orderByChild('point');
+
 
 export default {
   name: 'app',
