@@ -1,7 +1,7 @@
 <template>
   <div class="itemList">
     <ul>
-			<item v-for="item in items" :item="item" :database="database"></item>
+			<item v-for="item in items | orderBy point reverse" :item="item" :database="database"></item>
 		</ul>
   </div>
 </template>
